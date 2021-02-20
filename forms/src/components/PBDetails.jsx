@@ -27,16 +27,16 @@ class PBDetails extends Component {
 
         }
     }
-    setValue = (e) => {
-
+    setValue(e) {
+        console.log("hi");
         if (e.target.name === 'fname')
-            if (e.target.value.length > 5)
+            if (e.target.value.length > 0) {
                 this.setState({
                     firstName: e.target.value,
 
                 })
-
-            else if (e.target.name === 'lname') {
+                console.log(this.state.firstName)
+            } else if (e.target.name === 'lname') {
                 if (e.target.value.length > 5)
                     this.setState({
                         lastName: e.target.value,

@@ -5,13 +5,17 @@ import currency from '../components/currency.json';
 export default class BankDetails extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            currencyvalue: ""
+        }
     }
     getCurrency() {
-        if (this.props.country == "United States Of America") {
-            this.props.currency = "USD";
-        } else {
-            return "INR";
-        }
+        currency.map(item => {
+            if (item.name === this.props.country) {
+                this.setState({ currencyvalue: item.cur })
+            }
+        })
+
     }
     render() {
         return (
@@ -26,7 +30,7 @@ export default class BankDetails extends Component {
                             <option value="United Arab Emirates">United Arab Emirates</option>
                         </select>
                     </label><br></br>
-                    <p>Curency:{this.props.currency}</p><br></br>
+                    <p>Curency:{this.state.currencyvalue}</p><br></br>
                     <label>IFSC code
                         <input type="text" name="ifsc" onChange={this.props.setBankDetails} value={this.props.ifsccode} />
                     </label><br></br>

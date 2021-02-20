@@ -14,7 +14,7 @@ class Personal extends Component {
             <div>
                 <form >
                     <label>First Name
-                        <input type="text" name="fname" value={this.props.firstname} onChange={this.props.setValue} />
+                        <input type="text" name="fname" value={this.props.firstName} onChange={this.props.setValue} />
                     </label><br></br>
 
                     <label>Last Name
